@@ -1,0 +1,10 @@
+.input {
+  &--large {
+    height: 56px;
+  }
+  .ant-input-prefix {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+  }
+}
