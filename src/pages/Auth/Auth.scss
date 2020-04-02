@@ -4,9 +4,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
 
   &__top {
+    text-align: center;
+
     h2 {
       margin-bottom: 7px;
       font-size: 28px;
@@ -25,8 +26,10 @@
 
   &__register {
     &-link {
+      display: block;
+      text-align: center;
       font-size: 16px;
-      letter-spacing: 0.1;
+      letter-spacing: 0.1px;
       color: #ADADAD;
     }
   }

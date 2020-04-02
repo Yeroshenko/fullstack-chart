@@ -1,3 +1,7 @@
 export { default as Button } from './Button/Button'
 export { default as ShadowBlock } from './ShadowBlock/ShadowBlock'
 export { default as Input } from './Input/Input'
+export { default as Time } from './Time/Time'
+export { default as Message } from './Message/Message'
+export { default as DialogItem } from './DialogItem/DialogItem'
+export { default as IconReaded } from './IconReaded/IconReaded'
