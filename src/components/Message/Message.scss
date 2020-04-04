@@ -90,6 +90,50 @@
     }
   }
 
+  &__audio {
+    audio {
+      display: none;
+    }
+
+    &-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: #418FFF;
+      transition: width .3s ease;
+    }
+
+    &-info {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-btn {
+      button {
+        width: 28px;
+        height: 28px;
+        border: none;
+        border-radius: 50%;
+        background-color: #0F3997;
+        cursor: pointer;
+
+        img {
+          height: 11px;
+        }
+      }
+    }
+
+    &-duration {
+      font-weight: 500;
+      color: #FFFFFF;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+  }
+
   // isMe
   &--isme {
     margin-left: auto;
@@ -168,6 +212,17 @@
         margin-bottom: 0;
       }
 
+    }
+  }
+
+  // audio
+  &--is-audio {
+    #{$self} {
+      &__bubble {
+        position: relative;
+        width: 280px;
+        overflow: hidden;
+      }
     }
   }
 }
