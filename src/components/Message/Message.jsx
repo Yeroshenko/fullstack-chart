@@ -9,7 +9,7 @@ import playIcon from 'assets/img/play.svg'
 import pauseIcon from 'assets/img/pause.svg'
 import './Message.scss'
 
-const MessageAudio = ({audio}) => {
+const MessageAudio = ({ audio }) => {
   const [isPlaying, setIsPlaying] = useState(false)
   const [progress, setProgress] = useState(0)
   const [currentTime, setCurrentTime] = useState(0)
@@ -98,8 +98,8 @@ const Message = ({
       <div className='message__content'>
         {attachments && (
           <div className='message__attachments'>
-            {attachments.map(item => (
-              <div className='message__attachments-item'>
+            {attachments.map((item, index) => (
+              <div className='message__attachments-item' key={index}>
                 <img src={item.url} alt={item.filename} />
               </div>
             ))}

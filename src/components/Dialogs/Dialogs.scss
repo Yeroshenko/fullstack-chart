@@ -1,0 +1,20 @@
+.dialogs {
+  &__search {
+    width: 100%;
+    padding: 20px;
+
+    .ant-input-search {
+      height: 38px;
+      display: flex;
+      align-items: center;
+
+      border: none;
+      background-color: #F7F8F9;
+
+      input {
+        background-color: transparent;
+      }
+      
+    }
+  }
+}

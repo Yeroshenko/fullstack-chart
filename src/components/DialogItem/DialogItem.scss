@@ -1,18 +1,21 @@
 @import '../../styles/variables';
 
 .dialogs__item {
+  $self: &;
+
   width: 100%;
-  max-width: 320px;
   padding: 12px 20px;
   display: grid;
   grid-template-columns: 40px 1fr;
   grid-template-rows: 40px;
   grid-gap: 10px;
-  $self: &;
 
+  transition: .2s all ease;
+  cursor: pointer;
 
-
-  &-avatar {
+  &:hover,
+  .active {
+    background-color: $lightBlue
   }
 
   &--online {
@@ -34,7 +37,7 @@
           border: 3px solid $white;
           border-radius: 50%;
         }
-        
+
       }
     }
   }

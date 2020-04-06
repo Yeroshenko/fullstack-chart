@@ -9,7 +9,9 @@ export default (hash) => {
     getCorrectIndex(char.charCodeAt())
   )
   return { 
-    color: tinycolor({ r, g, b }).toHexString(), 
-    colorLighten: tinycolor({ r, g, b }).lighten(40).toHexString() 
+    color: tinycolor({ r, g, b })
+      .lighten(15).saturate(20).toHexString(), 
+    colorLighten: tinycolor({ r, g, b })
+      .lighten(40).saturate(10).toHexString() 
   }
 }
