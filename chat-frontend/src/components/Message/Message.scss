@@ -1,0 +1,234 @@
+@import '../../styles/variables';
+
+.message {
+  $self: &; // ссылка на родителя
+
+  margin-bottom: 20px;
+  max-width: 440px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+  // &__content {}
+
+  &__avatar {
+    margin-right: 13px;
+    margin-bottom: 22px;
+
+    .avatar, img {
+      width: 33px;
+      height: 33px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  &__bubble {
+    display: inline-block;
+    padding: 15px;
+    background: $blue;
+    box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.2);
+    border-radius: 12px 12px 12px 0px;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF
+  }
+
+  &__date {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 14px;
+    opacity: 0.4;
+  }
+
+  &__status {
+    margin-right: 10px;
+    margin-bottom: 22px;
+  }
+
+  &__attachments {
+    display: flex;
+    align-items: center;
+    // margin-bottom: 22px;
+
+    &-item {
+      margin-left: 5px;
+
+      img {
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__typing {
+    display: flex;
+
+    span {
+      height: 8px;
+      width: 8px;
+      display: inline-block;
+      background-color: $message-typing-dots;
+      border-radius: 50%;
+      opacity: 0.4;
+
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          animation: .8s blink infinite ($i * .3333s);
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &__audio {
+    audio {
+      display: none;
+    }
+
+    &-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: #418FFF;
+      transition: width .3s ease;
+    }
+
+    &-info {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-btn {
+      button {
+        width: 28px;
+        height: 28px;
+        border: none;
+        border-radius: 50%;
+        background-color: #0F3997;
+        cursor: pointer;
+
+        img {
+          height: 11px;
+        }
+      }
+    }
+
+    &-duration {
+      font-weight: 500;
+      color: #FFFFFF;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+  }
+
+  // isMe
+  &--isme {
+    margin-left: auto;
+    flex-direction: row-reverse;
+
+    #{$self} {
+
+      &__avatar {
+        margin-right: 0;
+        margin-left: 13px;
+      }
+
+      &__bubble {
+        background: #FFFFFF;
+        border: 1px solid #ECECEC;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
+        border-radius: 12px 12px 0px 12px;
+      }
+
+      &__text {
+        color: $black;
+      }
+
+      &__date {
+        text-align: right;
+      }
+
+      &__attachments {
+        justify-content: flex-end;
+
+        &-item {
+          margin-left: 0;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  // isTyping
+  &--is-typing {
+
+    #{$self} {
+
+      &__avatar {
+        margin-bottom: 0;
+      }
+
+      &__bubble {
+        padding: 19px 23px;
+        background-color: $message-typing;
+        box-shadow: none;
+      }
+    }
+  }
+
+  // only image
+  &--image {
+    #{$self} {
+
+      &__avatar {
+        margin-bottom: 0;
+      }
+
+      &__attachments {
+        margin-bottom: 0;
+
+        &-item {
+          img {
+            width: 150px;
+            height: 150px;
+          }
+        }
+      }
+
+      &__status {
+        margin-bottom: 0;
+      }
+
+    }
+  }
+
+  // audio
+  &--is-audio {
+    #{$self} {
+      &__bubble {
+        position: relative;
+        width: 280px;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}

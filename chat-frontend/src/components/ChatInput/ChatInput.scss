@@ -1,0 +1,79 @@
+@import '../../styles/variables';
+
+.chat-input {
+  position: relative;
+
+  input {
+    padding-left: 40px;
+    padding-right: 87px;
+    height: 48px;
+
+    &:focus {
+      box-shadow: none
+    }
+  }
+
+  .ant-btn {
+    width: auto !important;
+    height: auto !important;
+    border: none;
+    color: $black;
+    opacity: .5;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: inherit;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__smile-btn,
+  &__actions {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 1;
+  }
+
+  &__smile-btn {
+    font-size: 18px;
+    left: 15px;
+    transition: .2s all ease;
+
+  }
+
+  &__actions {
+    right: 15px;
+    display: flex;
+    align-content: center;
+
+    .ant-btn {
+      font-size: 21px !important;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+
+    &-upload-btn {
+      cursor: pointer;
+
+      &:hover {
+        button {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__emoji-picker {
+    position: absolute;
+    bottom: 50px;
+    left: -15px;
+  }
+}
