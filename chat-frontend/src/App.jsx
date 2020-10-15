@@ -7,7 +7,7 @@ function App() {
   return (
     <div className='wrapper'>
       <Route exact path={['/', '/login', '/register']} component={Auth} />
-      <Route exact path='/im' component={Home} />
+      <Route exact path='/home' component={Home} />
     </div>
   )
 }
